@@ -1,7 +1,6 @@
-import React from "react";
 import "./Home.scss";
 
-function Home(): JSX.Element {
+function Home() {
   return (
     <>
       <h1 className="titulo">Home</h1>
