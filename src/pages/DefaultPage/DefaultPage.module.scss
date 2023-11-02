@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.header {
+    background-color: $dark-blue;
+    height: 5rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .navContainer {
+        @include shadow();
+        display: flex;
+        // justify-content: center;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        height: calc(100vh - 5rem);
+        width: 15vw;
+        background-color: $intermediate-grey;
+        padding: 2rem 0;
+
+        nav {
+            width: 100%;
+            // padding: 2rem;
+            .menuList {
+                // background-color: black;
+                display: flex;
+                // gap: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+
+                li {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: baseline;
+                    padding: 1rem;
+                    // background-color: white;
+                    width: 100%;
+
+                    .menuLink {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .imageContainer {
+        @include shadow();
+        display: flex;
+        width: 15vw;
+        background-color: $light-blue;
+        justify-content: center;
+    }
+}
+
+.main {
+    margin-left: 15vw;
+    min-height: calc(100vh - 5rem - 2rem - 1px);
+}
+
+.footer {
+    align-items: center;
+    margin-left: 15vw;
+    display: flex;
+    height: 2rem;
+    background-color: $white;
+    border-top: $border-grey 1px solid;
+    padding: 1rem;
+    justify-content: space-between;
+
+    .logo {
+        width: 2rem;
+    }
+}
