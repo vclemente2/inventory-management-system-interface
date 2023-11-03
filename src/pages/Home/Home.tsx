@@ -18,7 +18,7 @@ function Home() {
           </Link>
         </li>
         <li className={styles.cardList__item}>
-          <Link to="/">
+          <Link to="/new-item">
             <HomeCard
               image="/icons/fi-rs-apps-add.svg"
               title="Cadastrar Peça"
@@ -27,7 +27,7 @@ function Home() {
           </Link>
         </li>
         <li className={styles.cardList__item}>
-          <Link to="/">
+          <Link to="/new-hub">
             <HomeCard
               image="/icons/fi-rs-boxes.svg"
               title="Novo Hub"
@@ -36,7 +36,7 @@ function Home() {
           </Link>
         </li>
         <li className={styles.cardList__item}>
-          <Link to="/">
+          <Link to="/inventory-management">
             <HomeCard
               image="/icons/fi-rs-arrows-repeat.svg"
               title="Gerenciar Estoque"
@@ -45,11 +45,20 @@ function Home() {
           </Link>
         </li>
         <li className={styles.cardList__item}>
-          <Link to="/">
+          <Link to="/reports">
             <HomeCard
               image="/icons/fi-rs-chat-arrow-grow.svg"
               title="Relatórios"
               color="#7a7a7a"
+            />
+          </Link>
+        </li>
+        <li className={styles.cardList__item}>
+          <Link to="/profile">
+            <HomeCard
+              image="/icons/fi-rs-user.svg"
+              title="Perfil"
+              color="#20ca98"
             />
           </Link>
         </li>

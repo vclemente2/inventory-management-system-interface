@@ -10,21 +10,28 @@
     position: sticky;
     top: 0;
     left: 0;
-    padding-right: 2rem;
+    // padding-right: 2rem;
 
     h1 {
-        padding-left: 2rem;
+        // padding-left: 2rem;
         align-self: center;
-        text-align: left;
+        text-align: center;
         color: $white;
         flex-grow: 1;
     }
+    .userContainer {
+        width: 15vw;
+        align-self: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+
     .userLink {
         align-self: center;
         display: flex;
         width: 36px;
         height: 36px;
-
+        margin-right: 2rem;
         padding: 0.5rem;
         border-radius: 100%;
         box-sizing: content-box;

@@ -15,9 +15,11 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
           <img src={logo} />
         </span>
         <h1>Gestão de Estoque | Hubs</h1>
-        <Link to={"/"} className={styles.userLink}>
-          <img src="/icons/fi-rs-user.svg" className={styles.userIcon} />
-        </Link>
+        <span className={styles.userContainer}>
+          <Link to={"/profile"} className={styles.userLink}>
+            <img src="/icons/fi-rs-user.svg" className={styles.userIcon} />
+          </Link>
+        </span>
         <div className={styles.navContainer}>
           <nav>
             <ul className={styles.menuList}>
@@ -31,13 +33,13 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                 </Link>
               </li>
               <li>
-                <Link to={"/"} className={styles.menuLink}>
+                <Link to={"/new-item"} className={styles.menuLink}>
                   <img className={styles.add} src="/icons/fi-rs-apps-add.svg" />
                   Cadastrar Item
                 </Link>
               </li>
               <li>
-                <Link to={"/"} className={styles.menuLink}>
+                <Link to={"/inventory-management"} className={styles.menuLink}>
                   <img
                     className={styles.add}
                     src="/icons/fi-rs-arrows-repeat.svg"
@@ -46,13 +48,13 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                 </Link>
               </li>
               <li>
-                <Link to={"/"} className={styles.menuLink}>
+                <Link to={"/new-hub"} className={styles.menuLink}>
                   <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
                   Cadastrar Hub
                 </Link>
               </li>
               <li>
-                <Link to={"/"} className={styles.menuLink}>
+                <Link to={"/reports"} className={styles.menuLink}>
                   <img
                     className={styles.add}
                     src="/icons/fi-rs-chat-arrow-grow.svg"
