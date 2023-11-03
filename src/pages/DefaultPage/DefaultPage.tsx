@@ -14,45 +14,49 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
         <span className={styles.imageContainer}>
           <img src={logo} />
         </span>
+        <h1>Gestão de Estoque | Hubs</h1>
+        <Link to={"/"} className={styles.userLink}>
+          <img src="/icons/fi-rs-user.svg" className={styles.userIcon} />
+        </Link>
         <div className={styles.navContainer}>
           <nav>
             <ul className={styles.menuList}>
               <li>
-                <img
-                  className={styles.menuImg}
-                  src="/icons/fi-rs-building.svg/"
-                />
                 <Link to={"/"} className={styles.menuLink}>
+                  <img
+                    className={styles.menuImg}
+                    src="/icons/fi-rs-building.svg/"
+                  />
                   Home
                 </Link>
               </li>
               <li>
-                <img className={styles.add} src="/icons/fi-rs-apps-add.svg" />
                 <Link to={"/"} className={styles.menuLink}>
+                  <img className={styles.add} src="/icons/fi-rs-apps-add.svg" />
                   Cadastrar Item
                 </Link>
               </li>
               <li>
-                <img
-                  className={styles.add}
-                  src="/icons/fi-rs-arrows-repeat.svg"
-                />
                 <Link to={"/"} className={styles.menuLink}>
+                  <img
+                    className={styles.add}
+                    src="/icons/fi-rs-arrows-repeat.svg"
+                  />
                   Entrada / Saída
                 </Link>
               </li>
               <li>
-                <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
                 <Link to={"/"} className={styles.menuLink}>
-                  Hubs
+                  <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
+                  Cadastrar Hub
                 </Link>
               </li>
               <li>
-                <img
-                  className={styles.add}
-                  src="/icons/fi-rs-chat-arrow-grow.svg"
-                />
                 <Link to={"/"} className={styles.menuLink}>
+                  <img
+                    className={styles.add}
+                    src="/icons/fi-rs-chat-arrow-grow.svg"
+                  />
                   Relatórios
                 </Link>
               </li>

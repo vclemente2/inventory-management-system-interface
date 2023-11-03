@@ -5,9 +5,35 @@
     background-color: $dark-blue;
     height: 5rem;
     display: flex;
+    // justify-content: ;
+    // align-items: center;
     position: sticky;
     top: 0;
     left: 0;
+    padding-right: 2rem;
+
+    h1 {
+        padding-left: 2rem;
+        align-self: center;
+        text-align: left;
+        color: $white;
+        flex-grow: 1;
+    }
+    .userLink {
+        align-self: center;
+        display: flex;
+        width: 36px;
+        height: 36px;
+
+        padding: 0.5rem;
+        border-radius: 100%;
+        box-sizing: content-box;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: $light-blue;
+        }
+    }
 
     .navContainer {
         @include shadow();
@@ -18,8 +44,8 @@
         left: 0;
         height: calc(100vh - 5rem);
         width: 15vw;
-        background-color: $intermediate-grey;
-        padding: 2rem 0;
+        background-color: $dark-grey;
+        // padding: 2rem 0;
 
         nav {
             width: 100%;
@@ -33,14 +59,23 @@
 
                 li {
                     display: flex;
-                    gap: 1rem;
-                    align-items: baseline;
-                    padding: 1rem;
+                    // gap: 1rem;
+                    // align-items: baseline;
                     // background-color: white;
                     width: 100%;
 
+                    &:hover {
+                        background-color: $dark-blue;
+                    }
+
                     .menuLink {
+                        font-size: 1.2rem;
+                        align-items: baseline;
+                        gap: 1rem;
+                        display: flex;
+                        width: 100%;
                         color: $white;
+                        padding: 1rem;
                     }
                 }
             }
@@ -58,20 +93,21 @@
 
 .main {
     margin-left: 15vw;
-    min-height: calc(100vh - 5rem - 2rem - 1px);
+    padding: 1rem 2rem;
+    min-height: calc(100vh - 5rem - 3rem - 1px);
 }
 
 .footer {
     align-items: center;
     margin-left: 15vw;
     display: flex;
-    height: 2rem;
+    height: 3rem;
     background-color: $white;
     border-top: $border-grey 1px solid;
-    padding: 1rem;
+    padding: 1rem 2rem;
     justify-content: space-between;
 
     .logo {
-        width: 2rem;
+        width: 3rem;
     }
 }
