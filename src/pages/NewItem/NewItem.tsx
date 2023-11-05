@@ -7,7 +7,7 @@ function NewItem() {
   const categories = ["Parede", "Laje", "Canto", "Ciclo"];
 
   return (
-    <>
+    <section>
       <MainTitle>Cadastro de Peças</MainTitle>
       <div className={styles.formContainer}>
         <form>
@@ -97,7 +97,7 @@ function NewItem() {
           </Button>
         </form>
       </div>
-    </>
+    </section>
   );
 }
 

@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.formContainer {
+    display: flex;
+    text-align: start;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .submitButton {
+        display: flex;
+        justify-content: space-between;
+    }
+}
