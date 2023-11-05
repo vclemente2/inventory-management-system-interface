@@ -21,7 +21,7 @@
         flex-grow: 1;
     }
     .userContainer {
-        width: 15vw;
+        width: 20vw;
         align-self: center;
         display: flex;
         justify-content: flex-end;
@@ -51,7 +51,7 @@
         top: 5rem;
         left: 0;
         height: calc(100vh - 5rem);
-        width: 15vw;
+        width: 20vw;
         background-color: $dark-grey;
         // padding: 2rem 0;
 
@@ -93,21 +93,21 @@
     .imageContainer {
         @include shadow();
         display: flex;
-        width: 15vw;
+        width: 20vw;
         background-color: $light-blue;
         justify-content: center;
     }
 }
 
 .main {
-    margin-left: 15vw;
+    margin-left: 20vw;
     padding: 1rem 2rem;
     min-height: calc(100vh - 5rem - 3rem - 1px);
 }
 
 .footer {
     align-items: center;
-    margin-left: 15vw;
+    margin-left: 20vw;
     display: flex;
     height: 3rem;
     background-color: $white;
