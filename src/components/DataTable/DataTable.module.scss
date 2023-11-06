@@ -21,6 +21,16 @@
         background-color: $white;
     }
 
+    tr:last-child {
+        background-color: $light-blue;
+
+        td {
+            border: none;
+            color: $white;
+            font-weight: bold;
+        }
+    }
+
     tr:hover {
         background-color: $intermediate-grey;
     }

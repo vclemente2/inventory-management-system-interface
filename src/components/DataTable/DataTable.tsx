@@ -38,9 +38,36 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
             <td>{peca.stock}</td>
           </tr>
         ))}
+        {generateTotalRow({ data })}
       </tbody>
     </table>
   );
 };
+
+function generateTotalRow({ data }: DataTableProps) {
+  const { totalArea, totalStock } = data.reduce(
+    (totals, item) => {
+      totals.totalArea += item.area;
+      totals.totalStock += item.stock;
+      return totals;
+    },
+    { totalArea: 0, totalStock: 0 }
+  );
+
+  return (
+    <tr key="total" className={styles.totalRow} id="totalRow">
+      <td>TOTAL</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{(totalArea / 10000).toFixed(2)}</td>
+      <td></td>
+      <td></td>
+      <td>{totalStock}</td>
+    </tr>
+  );
+}
 
 export default DataTable;
