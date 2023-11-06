@@ -6,7 +6,6 @@
 
     &__contentBox {
         display: flex;
-        // justify-content: space-between;
         gap: 1rem;
 
         .inputContent {
@@ -19,13 +18,13 @@
         flex-direction: column;
         gap: 1rem;
         justify-content: center;
-        // width: 100%;
+        width: 100%;
     }
 
     .submitButton {
         width: fit-content;
         display: flex;
         justify-content: space-between;
-        // align-self: center;
+        align-self: center;
     }
 }

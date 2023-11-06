@@ -51,7 +51,7 @@ function NewItem() {
           </div>
 
           <TextField
-            className="input"
+            className={`input ${styles.inputContent}`}
             id="itemDescription"
             label="Descrição"
             variant="outlined"
@@ -61,7 +61,7 @@ function NewItem() {
 
           <div className={styles.formContainer__contentBox}>
             <TextField
-              className="input"
+              className={`input ${styles.inputContent}`}
               id="itemLength"
               label="Comprimento da Peça"
               variant="outlined"
@@ -73,7 +73,7 @@ function NewItem() {
               }}
             />
             <TextField
-              className="input"
+              className={`input ${styles.inputContent}`}
               id="itemWidth"
               label="Largura da Peça"
               variant="outlined"
@@ -85,7 +85,7 @@ function NewItem() {
               }}
             />
             <TextField
-              className="input"
+              className={`input ${styles.inputContent}`}
               id="itemThickness"
               label="Espessura do Peça"
               variant="outlined"
@@ -111,11 +111,11 @@ function NewItem() {
           >
             Cadastrar Item
           </Button>
-          <MyModal isOpen={isModalOpen} closeModal={closeModal}>
-            Item Cadastrado com Sucesso
-          </MyModal>
         </form>
       </div>
+      <MyModal isOpen={isModalOpen} closeModal={closeModal}>
+        Item Cadastrado com Sucesso
+      </MyModal>
     </section>
   );
 }
