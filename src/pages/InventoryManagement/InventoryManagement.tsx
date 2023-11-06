@@ -3,42 +3,10 @@ import MainTitle from "../../components/MainTitle/MainTitle";
 import styles from "./InventoryManagement.module.scss";
 import { useState } from "react";
 import { SyncAlt } from "@mui/icons-material";
+import hubs from "../../data/hubs";
+import items from "../../data/items";
 
 function InventoryManagement() {
-  const hubs = [
-    "Hub-Belo Horizonte",
-    "Hub-Rio de Janeiro",
-    "Hub-Fortaleza",
-    "Hub-Bahia"
-  ];
-  const items = [
-    "FM (ALUM)(60 x 240)",
-    "FM (ALUM)(30 x 240)",
-    "FM (ALUM)(40 x 240)",
-    "FM (ALUM)(225 x 240)",
-    "FM (ALUM)(52 x 240)",
-    "FM (ALUM)(15 x 240)",
-    "FM (ALUM)(43 x 240)",
-    "FM (ALUM)(65 x 240)",
-    "FM (ALUM)(15 x 240)",
-    "FM (ALUM)(20 x 240)",
-    "FM (ALUM)(56 x 240)",
-    "FM (ALUM)(50 x 240)",
-    "FM (PLUS)(15 x 240)",
-    "FM (PLUS)(20 x 240)",
-    "FM (PLUS)(55 x 240)",
-    "FM (PLUS)(27,5 x 240)",
-    "FM (PLUS)(50 x 240)",
-    "FM (PLUS)(32 x 240)",
-    "FM (PLUS)(40 x 240)",
-    "FM (PLUS)(45 x 240)",
-    "FM (PLUS)(22 x 240)",
-    "FM (PLUS)(19 x 240)",
-    "FM (PLUS)(60 x 240)",
-    "FM (PLUS)(41 x 240)",
-    "FM (PLUS)(16 x 240)"
-  ];
-
   const [operationType, setOperationType] = useState("");
 
   return (

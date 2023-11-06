@@ -2,10 +2,9 @@ import { Button, InputAdornment, MenuItem, TextField } from "@mui/material";
 import styles from "./NewItem.module.scss";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import { AddCircleOutline } from "@mui/icons-material";
+import categories from "../../data/categories";
 
 function NewItem() {
-  const categories = ["Parede", "Laje", "Canto", "Ciclo"];
-
   return (
     <section>
       <MainTitle>Cadastro de Peças</MainTitle>
@@ -39,9 +38,9 @@ function NewItem() {
             variant="outlined"
             select
           >
-            {categories.map((option) => (
-              <MenuItem key={option} value={option}>
-                {option}
+            {categories.map((category) => (
+              <MenuItem key={category} value={category}>
+                {category}
               </MenuItem>
             ))}
           </TextField>

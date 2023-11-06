@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.reportContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    border: $border-grey 1px solid;
+    border-top: none;
+    margin-bottom: 1rem;
+    background-color: $white;
+
+    &__title {
+        font-size: 1.25rem;
+        display: flex;
+        align-items: self-end;
+        margin-bottom: 0.75rem;
+    }
+
+    &__inputs {
+        width: 100%;
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    &__input {
+        width: 200px;
+        text-align: left;
+    }
+}
+
+.exportButton {
+    align-self: flex-start;
+}
+
+.tableContainer {
+    margin-top: 0.25rem;
+}

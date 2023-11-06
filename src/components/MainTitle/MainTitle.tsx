@@ -2,11 +2,18 @@ import styles from "./MainTitle.module.scss";
 
 interface Props {
   children: string;
+  noMargin?: boolean;
 }
 
-const MainTitle = ({ children }: Props) => {
+const MainTitle = ({ children, noMargin = false }: Props) => {
   return (
-    <div className={styles.mainTitleContainer}>
+    <div
+      className={
+        noMargin
+          ? `${styles.mainTitleContainer} ${styles.noMargin}`
+          : `${styles.mainTitleContainer}`
+      }
+    >
       <h2>{children}</h2>
     </div>
   );
