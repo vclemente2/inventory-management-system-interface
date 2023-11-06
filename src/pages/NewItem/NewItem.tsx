@@ -3,19 +3,53 @@ import styles from "./NewItem.module.scss";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import { AddCircleOutline } from "@mui/icons-material";
 import categories from "../../data/categories";
+import MyModal from "../../components/Modal/Modal";
+import { useState } from "react";
 
 function NewItem() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <section>
       <MainTitle>Cadastro de Peças</MainTitle>
       <div className={styles.formContainer}>
         <form>
-          <TextField
-            className="input"
-            id="itemName"
-            label="Nome do Item"
-            variant="outlined"
-          />
+          <div className={styles.formContainer__contentBox}>
+            <TextField
+              className={`input ${styles.inputContent}`}
+              id="itemName"
+              label="Nome do Item"
+              variant="outlined"
+            />
+            <TextField
+              className={`input ${styles.inputContent}`}
+              id="itemCode"
+              label="Código do Item"
+              variant="outlined"
+            />
+
+            <TextField
+              className={`input ${styles.inputContent}`}
+              id="itemCategory"
+              label="Categoria"
+              variant="outlined"
+              select
+            >
+              {categories.map((category) => (
+                <MenuItem key={category} value={category}>
+                  {category}
+                </MenuItem>
+              ))}
+            </TextField>
+          </div>
+
           <TextField
             className="input"
             id="itemDescription"
@@ -24,63 +58,45 @@ function NewItem() {
             multiline
             minRows={2}
           />
-          <TextField
-            className="input"
-            id="itemCode"
-            label="Código do Item"
-            variant="outlined"
-          />
 
-          <TextField
-            className="input"
-            id="itemCategory"
-            label="Categoria"
-            variant="outlined"
-            select
-          >
-            {categories.map((category) => (
-              <MenuItem key={category} value={category}>
-                {category}
-              </MenuItem>
-            ))}
-          </TextField>
-
-          <TextField
-            className="input"
-            id="itemLength"
-            label="Comprimento da Peça"
-            variant="outlined"
-            type="number"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">cm</InputAdornment>
-              )
-            }}
-          />
-          <TextField
-            className="input"
-            id="itemWidth"
-            label="Largura da Peça"
-            variant="outlined"
-            type="number"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">cm</InputAdornment>
-              )
-            }}
-          />
-          <TextField
-            className="input"
-            id="itemThickness"
-            label="Espessura do Peça"
-            variant="outlined"
-            type="number"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">cm</InputAdornment>
-              )
-            }}
-          />
+          <div className={styles.formContainer__contentBox}>
+            <TextField
+              className="input"
+              id="itemLength"
+              label="Comprimento da Peça"
+              variant="outlined"
+              type="number"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">cm</InputAdornment>
+                )
+              }}
+            />
+            <TextField
+              className="input"
+              id="itemWidth"
+              label="Largura da Peça"
+              variant="outlined"
+              type="number"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">cm</InputAdornment>
+                )
+              }}
+            />
+            <TextField
+              className="input"
+              id="itemThickness"
+              label="Espessura do Peça"
+              variant="outlined"
+              type="number"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">cm</InputAdornment>
+                )
+              }}
+            />
+          </div>
 
           <Button
             className={styles.submitButton}
@@ -90,10 +106,14 @@ function NewItem() {
             endIcon={<AddCircleOutline style={{ fill: "#fff" }} />}
             onClick={(event) => {
               event.preventDefault();
+              openModal();
             }}
           >
             Cadastrar Item
           </Button>
+          <MyModal isOpen={isModalOpen} closeModal={closeModal}>
+            Item Cadastrado com Sucesso
+          </MyModal>
         </form>
       </div>
     </section>

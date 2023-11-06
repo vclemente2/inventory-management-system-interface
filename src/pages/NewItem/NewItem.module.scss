@@ -4,14 +4,28 @@
     display: flex;
     text-align: start;
 
+    &__contentBox {
+        display: flex;
+        // justify-content: space-between;
+        gap: 1rem;
+
+        .inputContent {
+            width: 100%;
+        }
+    }
+
     form {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        justify-content: center;
+        // width: 100%;
     }
 
     .submitButton {
+        width: fit-content;
         display: flex;
         justify-content: space-between;
+        // align-self: center;
     }
 }
