@@ -80,7 +80,7 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                 }}
               >
                 <span className={styles.menuLink}>
-                  <img className={styles.add} src="/icons/fi-rs-apps-add.svg" />
+                  <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
                   <span className={styles.menuLink__text}>Gestão de Peças</span>
                   {submenuActivated.inventory ? (
                     <ArrowDropUpIcon
@@ -147,7 +147,7 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                 }}
               >
                 <span className={styles.menuLink}>
-                  <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
+                  <img className={styles.add} src="/icons/fi-rs-box.svg" />
                   <span className={styles.menuLink__text}>
                     Gestão de Formas
                   </span>
@@ -171,9 +171,15 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                 >
                   <li>
                     <Link
-                      to="/"
+                      to="/new-form"
                       className={`${styles.menuLink} ${"itemSubmenu"}`}
-                    ></Link>
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-apps-add.svg"
+                      />
+                      Cadastrar Forma
+                    </Link>
                   </li>
                 </ul>
               </li>

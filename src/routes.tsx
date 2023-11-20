@@ -6,6 +6,7 @@ import InventoryManagement from "./pages/InventoryManagement/InventoryManagement
 import NewHub from "./pages/NewHub/NewHub";
 import Reports from "./pages/Reports/Reports";
 import Profile from "./pages/Profile/Profile";
+import NewForm from "./pages/NewForm/NewForm";
 
 function AppRouter() {
   return (
@@ -18,6 +19,8 @@ function AppRouter() {
           <Route path="/new-hub" Component={NewHub} />
           <Route path="/reports" Component={Reports} />
           <Route path="/profile" Component={Profile} />
+
+          <Route path="/new-form" Component={NewForm} />
         </Route>
       </Routes>
     </Router>
