@@ -70,15 +70,6 @@ function NewForm() {
             />
           </div>
 
-          {/* <TextField
-            className={`input ${styles.inputContent}`}
-            id="itemDescription"
-            label="Descrição"
-            variant="outlined"
-            multiline
-            minRows={2}
-          /> */}
-
           <div className={styles.formContainer__contentBox}>
             <TextField
               className={`input ${styles.inputContent}`}
@@ -147,7 +138,7 @@ function NewForm() {
         </form>
       </div>
       <MyModal isOpen={isModalOpen} closeModal={closeModal}>
-        Item Cadastrado com Sucesso
+        Forma Cadastrada com Sucesso
       </MyModal>
     </section>
   );

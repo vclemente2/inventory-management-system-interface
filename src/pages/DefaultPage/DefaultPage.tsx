@@ -181,6 +181,18 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                       Cadastrar Forma
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/form-status"
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-settings-sliders.svg"
+                      />
+                      Atualizar Status
+                    </Link>
+                  </li>
                 </ul>
               </li>
 
@@ -219,6 +231,10 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                       to={"/reports"}
                       className={`${styles.menuLink} ${"itemSubmenu"}`}
                     >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-arrows-repeat.svg"
+                      />
                       Estoque de Peças
                     </Link>
                   </li>
