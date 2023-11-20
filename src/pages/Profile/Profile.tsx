@@ -29,8 +29,7 @@ const ProfilePage: React.FC = () => {
       name: "Nome do Usuário",
       email: "usuario@example.com",
       role: "Cargo do Usuário",
-      image:
-        "/images/empresario-prospero-mantem-as-maos-cruzadas-tem-expressao-satisfeita.jpg"
+      image: "https://avatars.githubusercontent.com/vclemente2"
     };
 
     setUserProfile(userData);
