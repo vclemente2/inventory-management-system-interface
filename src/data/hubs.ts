@@ -1,6 +1,6 @@
 export default [
-  "Hub-Belo Horizonte",
-  "Hub-Rio de Janeiro",
-  "Hub-Fortaleza",
-  "Hub-Bahia"
+  "HUB-Belo Horizonte",
+  "HUB-Rio de Janeiro",
+  "HUB-Fortaleza",
+  "HUB-Bahia"
 ];

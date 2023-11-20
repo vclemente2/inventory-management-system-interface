@@ -11,31 +11,31 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
     <table className={styles.table}>
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>Descrição</th>
-          <th>Código</th>
+          <th>Categoria</th>
+          <th>Nomenclatura</th>
+          {/* <th>Code</th> */}
           <th>Largura (cm)</th>
           <th>Comprimento (cm)</th>
           <th>Espessura (cm)</th>
           <th>Área (m²)</th>
-          <th>Categoria</th>
           <th>Hub</th>
           <th>Quantidade em Estoque</th>
+          <th>Nº Palete</th>
         </tr>
       </thead>
       <tbody>
         {data.map((peca, index) => (
           <tr key={index}>
+            <td>{peca.category}</td>
             <td>{peca.name}</td>
-            <td>{peca.description}</td>
-            <td>{peca.code}</td>
+            {/* <td>{peca.code}</td> */}
             <td>{peca.width}</td>
             <td>{peca.length}</td>
             <td>{peca.thickness}</td>
             <td>{peca.area / 10000}</td>
-            <td>{peca.category}</td>
             <td>{peca.hub}</td>
             <td>{peca.stock}</td>
+            <td>{Math.round(Math.random() * 100)}</td>
           </tr>
         ))}
         {generateTotalRow({ data })}
@@ -57,15 +57,15 @@ function generateTotalRow({ data }: DataTableProps) {
   return (
     <tr key="total" className={styles.totalRow} id="totalRow">
       <td>TOTAL</td>
-      <td></td>
+      {/* <td></td> */}
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td>{(totalArea / 10000).toFixed(2)}</td>
       <td></td>
-      <td></td>
       <td>{totalStock}</td>
+      <td></td>
     </tr>
   );
 }

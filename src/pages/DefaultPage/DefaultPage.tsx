@@ -2,12 +2,47 @@ import { Link, Outlet } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import secondLogo from "../../assets/images/logo-only.png";
 import styles from "./DefaultPage.module.scss";
+import { useState } from "react";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 interface DefaultPageProps {
   children?: JSX.Element;
 }
 
+interface SubmenuStatus {
+  inventory: boolean;
+  form: boolean;
+  reports: boolean;
+}
+
 const DefaultPage = ({ children }: DefaultPageProps) => {
+  const [submenuActivated, setSubmenuActivated] = useState<SubmenuStatus>({
+    inventory: false,
+    form: false,
+    reports: false
+  });
+
+  function changeSubmenu(event: MouseEvent<HTMLLIElement, MouseEvent>): void {
+    const newMenuStatus: SubmenuStatus = {} as SubmenuStatus;
+
+    console.log(event.target);
+
+    for (const key in submenuActivated) {
+      if (key === event.currentTarget.id) {
+        console.log(event.target.classList.contains("itemSubmenu"));
+        if (event.target.classList.contains("itemSubmenu")) {
+          newMenuStatus[key] = true;
+        } else {
+          newMenuStatus[key] = !submenuActivated[key];
+        }
+      } else {
+        newMenuStatus[key] = false;
+      }
+    }
+    setSubmenuActivated(newMenuStatus);
+  }
+
   return (
     <>
       <header className={styles.header}>
@@ -32,35 +67,152 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to={"/new-item"} className={styles.menuLink}>
+
+              <li
+                className={styles.submenu}
+                id="inventory"
+                onClick={(event) => {
+                  changeSubmenu(event);
+                }}
+              >
+                <span className={styles.menuLink}>
                   <img className={styles.add} src="/icons/fi-rs-apps-add.svg" />
-                  Cadastrar Item
-                </Link>
+                  <span className={styles.menuLink__text}>Gestão de Peças</span>
+                  {submenuActivated.inventory ? (
+                    <ArrowDropUpIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  ) : (
+                    <ArrowDropDownIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  )}
+                </span>
+
+                <ul
+                  className={`${styles.submenu__list} ${
+                    submenuActivated.inventory ? styles.active : ""
+                  }`}
+                >
+                  <li className="itemSubmenu">
+                    <Link
+                      to={"/new-item"}
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-apps-add.svg"
+                      />
+                      Cadastrar Item
+                    </Link>
+                  </li>
+                  <li className="itemSubmenu">
+                    <Link
+                      to={"/inventory-management"}
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-arrows-repeat.svg"
+                      />
+                      Entrada / Saída
+                    </Link>
+                  </li>
+                  <li className="itemSubmenu">
+                    <Link
+                      to={"/new-hub"}
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-boxes.svg"
+                      />
+                      Cadastrar Hub
+                    </Link>
+                  </li>
+                </ul>
               </li>
-              <li>
-                <Link to={"/inventory-management"} className={styles.menuLink}>
-                  <img
-                    className={styles.add}
-                    src="/icons/fi-rs-arrows-repeat.svg"
-                  />
-                  Entrada / Saída
-                </Link>
-              </li>
-              <li>
-                <Link to={"/new-hub"} className={styles.menuLink}>
+
+              <li
+                className={styles.submenu}
+                id="form"
+                onClick={(event) => {
+                  changeSubmenu(event);
+                }}
+              >
+                <span className={styles.menuLink}>
                   <img className={styles.add} src="/icons/fi-rs-boxes.svg" />
-                  Cadastrar Hub
-                </Link>
+                  <span className={styles.menuLink__text}>
+                    Gestão de Formas
+                  </span>
+                  {submenuActivated.form ? (
+                    <ArrowDropUpIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  ) : (
+                    <ArrowDropDownIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  )}
+                </span>
+
+                <ul
+                  className={`${styles.submenu__list} ${
+                    submenuActivated.form ? styles.active : ""
+                  }`}
+                >
+                  <li>
+                    <Link
+                      to="/"
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    ></Link>
+                  </li>
+                </ul>
               </li>
-              <li>
-                <Link to={"/reports"} className={styles.menuLink}>
+
+              <li
+                className={styles.submenu}
+                id="reports"
+                onClick={(event) => {
+                  changeSubmenu(event);
+                }}
+              >
+                <span className={styles.menuLink}>
                   <img
                     className={styles.add}
                     src="/icons/fi-rs-chat-arrow-grow.svg"
                   />
-                  Relatórios
-                </Link>
+                  <span className={styles.menuLink__text}>Relatórios</span>
+                  {submenuActivated.reports ? (
+                    <ArrowDropUpIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  ) : (
+                    <ArrowDropDownIcon
+                      className={styles.menuLink__arrow}
+                      sx={{ fill: "#fff" }}
+                    />
+                  )}
+                </span>
+                <ul
+                  className={`${styles.submenu__list} ${
+                    submenuActivated.reports ? styles.active : ""
+                  }`}
+                >
+                  <li>
+                    <Link
+                      to={"/reports"}
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      Estoque de Peças
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>

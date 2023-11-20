@@ -1,1 +1,1 @@
-export default ["Parede", "Laje", "Canto", "Ciclo"];
+export default ["Componente de Forma", "Kit Segurança", "Kit Acessórios"];

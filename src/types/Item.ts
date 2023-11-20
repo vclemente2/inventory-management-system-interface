@@ -1,6 +1,5 @@
 export default interface Item {
   name: string;
-  description: string;
   code: string;
   width: number;
   length: number;

@@ -25,13 +25,13 @@ function NewItem() {
             <TextField
               className={`input ${styles.inputContent}`}
               id="itemName"
-              label="Nome do Item"
+              label="Nomenclatura Interna"
               variant="outlined"
             />
             <TextField
               className={`input ${styles.inputContent}`}
               id="itemCode"
-              label="Código do Item"
+              label="Nomenclatura Fornecedor"
               variant="outlined"
             />
 
@@ -50,14 +50,14 @@ function NewItem() {
             </TextField>
           </div>
 
-          <TextField
+          {/* <TextField
             className={`input ${styles.inputContent}`}
             id="itemDescription"
             label="Descrição"
             variant="outlined"
             multiline
             minRows={2}
-          />
+          /> */}
 
           <div className={styles.formContainer__contentBox}>
             <TextField

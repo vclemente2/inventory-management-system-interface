@@ -4,8 +4,8 @@ import styles from "./InventoryManagement.module.scss";
 import { useState } from "react";
 import { SyncAlt } from "@mui/icons-material";
 import hubs from "../../data/hubs";
-import items from "../../data/items";
 import MyModal from "../../components/Modal/Modal";
+import inventoryRegisters from "../../data/inventoryRegisters";
 
 function InventoryManagement() {
   const [operationType, setOperationType] = useState("");
@@ -78,9 +78,9 @@ function InventoryManagement() {
               variant="outlined"
               select
             >
-              {items.map((item) => (
-                <MenuItem key={item} value={item}>
-                  {item}
+              {inventoryRegisters.map((item) => (
+                <MenuItem key={item.code} value={item.code}>
+                  {item.code}
                 </MenuItem>
               ))}
             </TextField>

@@ -85,9 +85,9 @@ function Reports() {
             <MenuItem key="clear" value="" style={{ color: "#aaa" }}>
               Limpar Filtro
             </MenuItem>
-            {items.map((item) => (
-              <MenuItem key={item} value={item}>
-                {item}
+            {inventoryRegisters.map((item) => (
+              <MenuItem key={item.code} value={item.code}>
+                {item.code}
               </MenuItem>
             ))}
           </TextField>
