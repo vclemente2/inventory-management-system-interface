@@ -16,6 +16,10 @@ interface SubmenuStatus {
   reports: boolean;
 }
 
+interface SubmenuStatus {
+  [key: string]: boolean;
+}
+
 const DefaultPage = ({ children }: DefaultPageProps) => {
   const [submenuActivated, setSubmenuActivated] = useState<SubmenuStatus>({
     inventory: false,
@@ -23,15 +27,15 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
     reports: false
   });
 
-  function changeSubmenu(event: MouseEvent<HTMLLIElement, MouseEvent>): void {
+  function changeSubmenu(
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ): void {
     const newMenuStatus: SubmenuStatus = {} as SubmenuStatus;
 
-    console.log(event.target);
-
+    const targetElement = event.target as HTMLElement;
     for (const key in submenuActivated) {
       if (key === event.currentTarget.id) {
-        console.log(event.target.classList.contains("itemSubmenu"));
-        if (event.target.classList.contains("itemSubmenu")) {
+        if (targetElement.classList.contains("itemSubmenu")) {
           newMenuStatus[key] = true;
         } else {
           newMenuStatus[key] = !submenuActivated[key];
