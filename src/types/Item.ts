@@ -3,7 +3,7 @@ export default interface Item {
   code: string;
   width: number;
   length: number;
-  thickness: string;
+  thickness: number;
   area: number;
   category: string;
   hub: string;

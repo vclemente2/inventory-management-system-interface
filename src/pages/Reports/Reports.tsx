@@ -7,7 +7,6 @@ import { Button, MenuItem, TextField } from "@mui/material";
 import categories from "../../data/categories.ts";
 import { FilterAltOffOutlined, FilterAltOutlined } from "@mui/icons-material";
 import hubs from "../../data/hubs.ts";
-import items from "../../data/items.ts";
 import * as XLSX from "xlsx";
 import Item from "../../types/Item.ts";
 

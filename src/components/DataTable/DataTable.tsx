@@ -29,10 +29,10 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
             <td>{peca.category}</td>
             <td>{peca.name}</td>
             {/* <td>{peca.code}</td> */}
-            <td>{peca.width}</td>
-            <td>{peca.length}</td>
-            <td>{peca.thickness}</td>
-            <td>{peca.area / 10000}</td>
+            <td>{peca.width ? peca.width : "-"}</td>
+            <td>{peca.length ? peca.length : "-"}</td>
+            <td>{peca.thickness ? peca.thickness : "-"}</td>
+            <td>{peca.area ? peca.area / 10000 : "-"}</td>
             <td>{peca.hub}</td>
             <td>{peca.stock}</td>
             <td>{Math.round(Math.random() * 100)}</td>
