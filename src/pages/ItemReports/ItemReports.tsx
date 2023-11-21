@@ -1,6 +1,6 @@
-import DataTable from "../../components/DataTable/DataTable";
-import MainTitle from "../../components/MainTitle/MainTitle";
-import styles from "./Reports.module.scss";
+import DataTable from "../../components/DataTable/DataTable.tsx";
+import MainTitle from "../../components/MainTitle/MainTitle.tsx";
+import styles from "./ItemReports.module.scss";
 import inventoryRegisters from "../../data/inventoryRegisters.ts";
 import { useEffect, useState } from "react";
 import { Button, MenuItem, TextField } from "@mui/material";
@@ -10,7 +10,7 @@ import hubs from "../../data/hubs.ts";
 import * as XLSX from "xlsx";
 import Item from "../../types/Item.ts";
 
-function Reports() {
+function ItemReports() {
   const [filteredData, setFilteredData] = useState(inventoryRegisters);
   const [categoryFilter, setCategoryFilter] = useState("");
   const [hubFilter, setHubFilter] = useState("");
@@ -128,4 +128,4 @@ function exportToExcel(data: Item[], fileName: string) {
   XLSX.writeFile(wb, `${fileName}.xlsx`);
 }
 
-export default Reports;
+export default ItemReports;

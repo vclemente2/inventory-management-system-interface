@@ -1,7 +1,7 @@
 import { Button, MenuItem, TextField } from "@mui/material";
 import styles from "./UpdateFormStatus.module.scss";
 import MainTitle from "../../components/MainTitle/MainTitle";
-import { AddCircleOutline } from "@mui/icons-material";
+import UpdateIcon from "@mui/icons-material/Update";
 import MyModal from "../../components/Modal/Modal";
 import { useEffect, useState } from "react";
 import formAndRegionalList from "../../data/formAndRegionalList";
@@ -121,7 +121,7 @@ function UpdateFormStatus() {
             size="large"
             type="submit"
             variant="contained"
-            endIcon={<AddCircleOutline style={{ fill: "#fff" }} />}
+            endIcon={<UpdateIcon style={{ fill: "#fff" }} />}
             onClick={(event) => {
               event.preventDefault();
               openModal();

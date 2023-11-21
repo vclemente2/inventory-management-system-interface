@@ -1,7 +1,7 @@
 import { Button, MenuItem, TextField } from "@mui/material";
 import styles from "./FormTransfer.module.scss";
 import MainTitle from "../../components/MainTitle/MainTitle";
-import { AddCircleOutline } from "@mui/icons-material";
+import { SyncAlt } from "@mui/icons-material";
 import MyModal from "../../components/Modal/Modal";
 import { useEffect, useState } from "react";
 import formAndRegionalList from "../../data/formAndRegionalList";
@@ -139,7 +139,7 @@ function FormTransfer() {
             size="large"
             type="submit"
             variant="contained"
-            endIcon={<AddCircleOutline style={{ fill: "#fff" }} />}
+            endIcon={<SyncAlt style={{ fill: "#fff" }} />}
             onClick={(event) => {
               event.preventDefault();
               openModal();

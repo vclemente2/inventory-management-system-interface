@@ -82,6 +82,8 @@
                         color: $white;
                         padding: 1rem;
                         cursor: pointer;
+                        border-bottom: 1px solid $intermediate-greytwo;
+
                         &:hover {
                             background-color: $dark-blue;
                         }

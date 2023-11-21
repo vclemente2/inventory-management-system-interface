@@ -4,11 +4,11 @@ import DefaultPage from "./pages/DefaultPage/DefaultPage";
 import NewItem from "./pages/NewItem/NewItem";
 import InventoryManagement from "./pages/InventoryManagement/InventoryManagement";
 import NewHub from "./pages/NewHub/NewHub";
-import Reports from "./pages/Reports/Reports";
 import Profile from "./pages/Profile/Profile";
 import NewForm from "./pages/NewForm/NewForm";
 import UpdateFormStatus from "./pages/UpdateFormStatus/UpdateFormStatus";
 import FormTransfer from "./pages/FormTransfer/FormTransfer";
+import ItemReports from "./pages/ItemReports/ItemReports";
 
 function AppRouter() {
   return (
@@ -19,7 +19,7 @@ function AppRouter() {
           <Route path="/new-item" Component={NewItem} />
           <Route path="/inventory-management" Component={InventoryManagement} />
           <Route path="/new-hub" Component={NewHub} />
-          <Route path="/reports" Component={Reports} />
+          <Route path="/reports" Component={ItemReports} />
           <Route path="/profile" Component={Profile} />
 
           <Route path="/new-form" Component={NewForm} />
