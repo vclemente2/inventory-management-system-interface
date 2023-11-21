@@ -7,8 +7,8 @@ import { Button, MenuItem, TextField } from "@mui/material";
 import categories from "../../data/categories.ts";
 import { FilterAltOffOutlined, FilterAltOutlined } from "@mui/icons-material";
 import hubs from "../../data/hubs.ts";
-import * as XLSX from "xlsx";
 import Item from "../../types/Item.ts";
+import exportToExcel from "../../utils/exportToExcel.ts";
 
 function ItemReports() {
   const [filteredData, setFilteredData] = useState(inventoryRegisters);
@@ -29,7 +29,7 @@ function ItemReports() {
 
   return (
     <section className={styles.reportContainer}>
-      <MainTitle noMargin={true}>Relatórios</MainTitle>
+      <MainTitle noMargin={true}>Relatórios - Estoque Hubs</MainTitle>
       <div className={styles.filterContainer}>
         <div className={styles.filterContainer__title}>
           <FilterAltOutlined />
@@ -110,7 +110,7 @@ function ItemReports() {
         className={styles.exportButton}
         variant="outlined"
         size="small"
-        onClick={() => exportToExcel(filteredData, "report")}
+        onClick={() => exportToExcel<Item>(filteredData, "report")}
       >
         Exportar Para Excel
       </Button>
@@ -119,13 +119,6 @@ function ItemReports() {
       </div>
     </section>
   );
-}
-
-function exportToExcel(data: Item[], fileName: string) {
-  const ws = XLSX.utils.json_to_sheet(data);
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-  XLSX.writeFile(wb, `${fileName}.xlsx`);
 }
 
 export default ItemReports;

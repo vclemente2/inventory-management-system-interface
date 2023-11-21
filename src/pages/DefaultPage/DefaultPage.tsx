@@ -250,6 +250,18 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                       Estoque de Peças
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to={"/regional-resume"}
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-funnel-dollar.svg"
+                      />
+                      Ativo Por Regional
+                    </Link>
+                  </li>
                 </ul>
               </li>
             </ul>

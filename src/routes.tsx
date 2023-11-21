@@ -9,6 +9,7 @@ import NewForm from "./pages/NewForm/NewForm";
 import UpdateFormStatus from "./pages/UpdateFormStatus/UpdateFormStatus";
 import FormTransfer from "./pages/FormTransfer/FormTransfer";
 import ItemReports from "./pages/ItemReports/ItemReports";
+import RegionalResume from "./pages/FormReports/RegionalResume/RegionalResume";
 
 function AppRouter() {
   return (
@@ -20,11 +21,13 @@ function AppRouter() {
           <Route path="/inventory-management" Component={InventoryManagement} />
           <Route path="/new-hub" Component={NewHub} />
           <Route path="/reports" Component={ItemReports} />
-          <Route path="/profile" Component={Profile} />
 
           <Route path="/new-form" Component={NewForm} />
           <Route path="/form-status" Component={UpdateFormStatus} />
           <Route path="/form-transfer-management" Component={FormTransfer} />
+          <Route path="/regional-resume" Component={RegionalResume} />
+
+          <Route path="/profile" Component={Profile} />
         </Route>
       </Routes>
     </Router>

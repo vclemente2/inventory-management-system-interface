@@ -48,7 +48,7 @@ function Home() {
           <Link to="/reports">
             <HomeCard
               image="/icons/fi-rs-chat-arrow-grow.svg"
-              title="Relatórios"
+              title="Relatório Estoque"
               color="#7a7a7a"
             />
           </Link>
@@ -66,7 +66,7 @@ function Home() {
         <li className={styles.cardList__item}>
           <Link to="/form-status">
             <HomeCard
-              image="/icons/fi-rs-boxes.svg"
+              image="/icons/fi-rs-settings-sliders.svg"
               title="Atualizar Status Forma"
               color="#4d4dc8"
             />

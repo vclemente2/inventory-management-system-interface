@@ -4,17 +4,13 @@ import MainTitle from "../../components/MainTitle/MainTitle";
 import { AddCircleOutline } from "@mui/icons-material";
 import MyModal from "../../components/Modal/Modal";
 import { useEffect, useState } from "react";
+import { currencyFormat } from "../../utils/currencyFormat";
 
 function NewForm() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const [formArea, setFormArea] = useState(0);
   const [formPrice, setFormPrice] = useState("");
-
-  const currencyFormat = new Intl.NumberFormat("pt-BR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
 
   useEffect(() => {
     setFormPrice(currencyFormat.format(formArea * 1458.0));

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./DataTable.module.scss";
 import Item from "../../types/Item";
+import { currencyFormat } from "../../utils/currencyFormat";
 
 interface DataTableProps {
   data: Item[];
@@ -32,7 +33,9 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
             <td>{peca.width ? peca.width : "-"}</td>
             <td>{peca.length ? peca.length : "-"}</td>
             <td>{peca.thickness ? peca.thickness : "-"}</td>
-            <td>{peca.area ? peca.area / 10000 : "-"}</td>
+            <td>
+              {peca.area ? currencyFormat.format(peca.area / 10000) : "-"}
+            </td>
             <td>{peca.hub}</td>
             <td>{peca.stock}</td>
             <td>{Math.round(Math.random() * 100)}</td>
@@ -62,7 +65,7 @@ function generateTotalRow({ data }: DataTableProps) {
       <td></td>
       <td></td>
       <td></td>
-      <td>{(totalArea / 10000).toFixed(2)}</td>
+      <td>{currencyFormat.format(totalArea / 10000)}</td>
       <td></td>
       <td>{totalStock}</td>
       <td></td>
