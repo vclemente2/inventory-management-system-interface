@@ -9,11 +9,11 @@ function Home() {
       <MainTitle>Bem Vindo ao Sistema de Controle de Estoque</MainTitle>
       <ul className={styles.cardList}>
         <li className={styles.cardList__item}>
-          <Link to="/">
+          <Link to="/profile">
             <HomeCard
-              image="/icons/fi-rs-building.svg"
-              title="Home"
-              color="yellow"
+              image="/icons/fi-rs-user.svg"
+              title="Perfil"
+              color="#20ca98"
             />
           </Link>
         </li>
@@ -53,12 +53,31 @@ function Home() {
             />
           </Link>
         </li>
+
         <li className={styles.cardList__item}>
-          <Link to="/profile">
+          <Link to="/new-form">
             <HomeCard
-              image="/icons/fi-rs-user.svg"
-              title="Perfil"
-              color="#20ca98"
+              image="/icons/fi-rs-apps-add.svg"
+              title="Cadastrar Forma"
+              color="yellow"
+            />
+          </Link>
+        </li>
+        <li className={styles.cardList__item}>
+          <Link to="/form-status">
+            <HomeCard
+              image="/icons/fi-rs-boxes.svg"
+              title="Atualizar Status Forma"
+              color="#4d4dc8"
+            />
+          </Link>
+        </li>
+        <li className={styles.cardList__item}>
+          <Link to="/form-transfer-management">
+            <HomeCard
+              image="/icons/fi-rs-arrows-repeat.svg"
+              title="Gerenciar Formas"
+              color="#e94b35"
             />
           </Link>
         </li>

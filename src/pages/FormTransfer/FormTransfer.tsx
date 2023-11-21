@@ -6,6 +6,7 @@ import MyModal from "../../components/Modal/Modal";
 import { useEffect, useState } from "react";
 import formAndRegionalList from "../../data/formAndRegionalList";
 import formRegisters from "../../data/formRegisters";
+import hubs from "../../data/hubs";
 
 function FormTransfer() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -13,8 +14,14 @@ function FormTransfer() {
   const [regional, setRegional] = useState("");
   const [formList, setFormList] = useState<string[]>([]);
   const [form, setForm] = useState<string>("");
-  const [currentStatus, setCurrentStatus] = useState<string>("");
   const [currentLocation, setCurrentLocation] = useState<string>("");
+  const [operationType, setOperationType] = useState<string>("");
+  const [isDisassembly, setIsDisassembly] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (operationType === "Desmontagem") setIsDisassembly(true);
+    else setIsDisassembly(false);
+  }, [operationType]);
 
   useEffect(() => {
     formAndRegionalList.forEach((element, index) => {
@@ -28,7 +35,6 @@ function FormTransfer() {
       return element.nomenclaturaInterna === form;
     });
 
-    setCurrentStatus(formRegister?.status as string);
     setCurrentLocation(formRegister?.nomeObra as string);
   }, [form]);
 
@@ -41,7 +47,7 @@ function FormTransfer() {
   };
   return (
     <section>
-      <MainTitle>Atualizar Status de Forma</MainTitle>
+      <MainTitle>Gerenciamento de Forma</MainTitle>
       <div className={styles.formContainer}>
         <form>
           <div className={styles.formContainer__contentBox}>
@@ -82,38 +88,50 @@ function FormTransfer() {
             <TextField
               className={`input ${styles.inputContent}`}
               id="currentLocation"
-              label="Localização Atual"
+              label="Origem"
               variant="outlined"
               value={currentLocation}
-            />
-            <TextField
-              className={`input ${styles.inputContent}`}
-              id="currentFormStatus"
-              label="Status Atual"
-              variant="outlined"
-              value={currentStatus}
             />
 
             <TextField
               className={`input ${styles.inputContent}`}
-              id="newFormStatus"
-              label="Novo Status"
+              id="tranferType"
+              label="Tipo de Operação"
               variant="outlined"
               select
+              value={operationType}
+              onChange={(e) => setOperationType(e.target.value)}
             >
-              <MenuItem key="0003" value="ANDAMENTO">
-                ANDAMENTO
+              <MenuItem key="0007" value="Desmontagem">
+                Desmontagem
               </MenuItem>
-              <MenuItem key="0004" value="ARMAZENADA EM OBRA">
-                ARMAZENADA EM OBRA
-              </MenuItem>
-              <MenuItem key="0005" value="ARMAZENADA EM HUB">
-                ARMAZENADA EM HUB
-              </MenuItem>
-              <MenuItem key="0006" value="DESMONTADA">
-                DESMONTADA
+              <MenuItem key="0008" value="Transferencia">
+                Transferencia
               </MenuItem>
             </TextField>
+
+            {isDisassembly ? (
+              <TextField
+                className={`input ${styles.inputContent}`}
+                id="hubFormDestiny"
+                label="Hub Destino"
+                variant="outlined"
+                select
+              >
+                {hubs.map((hub) => (
+                  <MenuItem key={hub} value={hub}>
+                    {hub}
+                  </MenuItem>
+                ))}
+              </TextField>
+            ) : (
+              <TextField
+                className={`input ${styles.inputContent}`}
+                id="constructionFormDestiny"
+                label="Obra Destino"
+                variant="outlined"
+              />
+            )}
           </div>
 
           <Button
@@ -127,12 +145,12 @@ function FormTransfer() {
               openModal();
             }}
           >
-            Atualizar Status
+            Realizar Operação
           </Button>
         </form>
       </div>
       <MyModal isOpen={isModalOpen} closeModal={closeModal}>
-        Status Atualizado com Sucesso
+        Operação Realizada com Sucesso
       </MyModal>
     </section>
   );

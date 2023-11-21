@@ -8,6 +8,7 @@ import Reports from "./pages/Reports/Reports";
 import Profile from "./pages/Profile/Profile";
 import NewForm from "./pages/NewForm/NewForm";
 import UpdateFormStatus from "./pages/UpdateFormStatus/UpdateFormStatus";
+import FormTransfer from "./pages/FormTransfer/FormTransfer";
 
 function AppRouter() {
   return (
@@ -23,6 +24,7 @@ function AppRouter() {
 
           <Route path="/new-form" Component={NewForm} />
           <Route path="/form-status" Component={UpdateFormStatus} />
+          <Route path="/form-transfer-management" Component={FormTransfer} />
         </Route>
       </Routes>
     </Router>

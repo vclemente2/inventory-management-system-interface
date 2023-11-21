@@ -183,6 +183,18 @@ const DefaultPage = ({ children }: DefaultPageProps) => {
                   </li>
                   <li>
                     <Link
+                      to="/form-transfer-management"
+                      className={`${styles.menuLink} ${"itemSubmenu"}`}
+                    >
+                      <img
+                        className={styles.add}
+                        src="/icons/fi-rs-arrows-repeat.svg"
+                      />
+                      Tranferir Forma
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       to="/form-status"
                       className={`${styles.menuLink} ${"itemSubmenu"}`}
                     >
