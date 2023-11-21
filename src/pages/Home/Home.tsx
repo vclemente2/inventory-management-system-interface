@@ -77,6 +77,15 @@ function Home() {
             <HomeCard
               image="/icons/fi-rs-arrows-repeat.svg"
               title="Gerenciar Formas"
+              color="#20ca98"
+            />
+          </Link>
+        </li>
+        <li className={styles.cardList__item}>
+          <Link to="/regional-resume">
+            <HomeCard
+              image="/icons/fi-rs-chat-arrow-grow.svg"
+              title="Relatório Forma"
               color="#e94b35"
             />
           </Link>
