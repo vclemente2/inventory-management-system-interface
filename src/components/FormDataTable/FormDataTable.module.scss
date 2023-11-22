@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+
+    th {
+        background-color: $dark-blue;
+        font-weight: bold;
+        color: $white;
+    }
+
+    th,
+    td {
+        border: 1px solid $border-grey;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: $white;
+    }
+
+    tr:last-child {
+        background-color: $light-blue;
+
+        td {
+            border: none;
+            color: $white;
+            font-weight: bold;
+        }
+    }
+
+    tr:hover {
+        background-color: $intermediate-grey;
+    }
+}

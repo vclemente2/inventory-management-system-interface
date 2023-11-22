@@ -1,26 +1,22 @@
 import MainTitle from "../../../components/MainTitle/MainTitle.tsx";
 import styles from "./RegionalResume.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, MenuItem, TextField } from "@mui/material";
-import { FilterAltOffOutlined, FilterAltOutlined } from "@mui/icons-material";
+import { FilterAltOutlined } from "@mui/icons-material";
 import RegionalDataTable from "../../../components/RegionalDataTable/RegionalDataTable.tsx";
 import formRegisters from "../../../data/formRegisters.ts";
 import Form from "../../../types/Form.ts";
 import exportToExcel from "../../../utils/exportToExcel.ts";
-import formAndRegionalList from "../../../data/formAndRegionalList.ts";
+import FormDataTable from "../../../components/FormDataTable/FormDataTable.tsx";
 
 function RegionalResume() {
-  const [filteredData, setFilteredData] = useState(formRegisters);
-  const [regionalFilter, setRegionalFilter] = useState("");
+  // const [filteredData, setFilteredData] = useState(formRegisters);
+  const [tableType, setTableType] = useState("Obra");
 
-  useEffect(() => {
-    const data = formRegisters.filter((element) => {
-      return element.regional
-        .toLowerCase()
-        .includes(regionalFilter.toLowerCase());
-    });
-    setFilteredData(data);
-  }, [regionalFilter]);
+  // useEffect(() => {
+  //   if (tableType === "Obra") setTable(<FormDataTable data={formRegisters} />);
+  //   else setTable(<RegionalDataTable data={formRegisters} />);
+  // }, [tableType]);
 
   return (
     <section className={styles.reportContainer}>
@@ -28,52 +24,58 @@ function RegionalResume() {
       <div className={styles.filterContainer}>
         <div className={styles.filterContainer__title}>
           <FilterAltOutlined />
-          <span>Filtros</span>
+          <span>Abertura Relatório</span>
         </div>
         <div className={styles.filterContainer__inputs}>
           <TextField
             className={`input ${styles.filterContainer__input}`}
             id="regionalFilter"
-            label="Regional"
+            label="Visão"
             variant="outlined"
             select
-            onChange={(event) => setRegionalFilter(event.target.value)}
-            value={regionalFilter}
+            onChange={(event) => setTableType(event.target.value)}
+            value={tableType}
           >
-            <MenuItem key="clear" value="" style={{ color: "#aaa" }}>
+            {/* <MenuItem key="clear" value="" style={{ color: "#aaa" }}>
               Limpar Filtro
+            </MenuItem> */}
+            <MenuItem key={"regional"} value={"Regional"}>
+              {"Regional"}
             </MenuItem>
-            {formAndRegionalList.map((item) => (
-              <MenuItem key={item.regional} value={item.regional}>
-                {item.regional}
-              </MenuItem>
-            ))}
+            <MenuItem key={"obra"} value={"Obra"}>
+              {"Obra"}
+            </MenuItem>
           </TextField>
 
-          <Button
+          {/* <Button
             type="button"
             variant="outlined"
             onClick={() => {
-              setRegionalFilter("");
+              setTableType("");
             }}
           >
             <FilterAltOffOutlined
               style={{ fill: "#1978D2" }}
             ></FilterAltOffOutlined>
             Limpar Filtro
-          </Button>
+          </Button> */}
         </div>
       </div>
       <Button
         className={styles.exportButton}
         variant="outlined"
         size="small"
-        onClick={() => exportToExcel<Form>(filteredData, "report")}
+        onClick={() => exportToExcel<Form>(formRegisters, "report")}
       >
         Exportar Para Excel
       </Button>
       <div className={styles.tableContainer}>
-        <RegionalDataTable data={filteredData}></RegionalDataTable>
+        {/* <FormDataTable data={formRegisters} /> */}
+        {tableType === "Obra" ? (
+          <FormDataTable data={formRegisters} />
+        ) : (
+          <RegionalDataTable data={formRegisters} />
+        )}
       </div>
     </section>
   );
